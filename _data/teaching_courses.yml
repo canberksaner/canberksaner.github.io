@@ -1,0 +1,77 @@
+lecture_based:
+  - code: EE6531
+    title: Selected Topics in Smart Grid Technologies
+    level: graduate-level
+    uni: National University of Singapore
+    logo: /assets/images/badges/nus_logo.png
+
+  - code: EE5713
+    title: Modern Power Systems and Smart Grid
+    level: graduate-level
+    uni: National University of Singapore
+    logo: /assets/images/badges/nus_logo.png
+
+  - code: ELK518E
+    title: Power System Stability
+    level: graduate-level
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+  - code: ELK501E
+    title: Power System Analysis
+    level: graduate-level
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+  - code: ELK496E
+    title: Power System Dynamics and Stability
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+    
+
+  - code: ELK495
+    title: Power Quality and Harmonics
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+    
+  - code: ELK455E
+    title: Computer Networks for Power Systems
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+  - code: ELK418
+    title: Distribution of Electrical Energy
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+  - code: MAT281E
+    title: Linear Algebra and Applications
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+lab_project_based:
+  - code: EE4501
+    title: Power System Management and Protection
+    uni: National University of Singapore
+    logo: /assets/images/badges/nus_logo.png
+
+  - code: EE4511
+    title: Renewable Generation and Smart Grid
+    uni: National University of Singapore
+    logo: /assets/images/badges/nus_logo.png
+
+  - code: ELK493E
+    title: Lighting Technology and Photometry Lab
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+
+  - code: ELK431
+    title: Electrical Machines Lab
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png
+
+  - code: ELK420
+    title: Electrical Distribution Automation Lab
+    uni: Istanbul Technical University
+    logo: /assets/images/badges/itu_logo.png

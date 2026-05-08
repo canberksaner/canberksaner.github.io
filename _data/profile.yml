@@ -1,0 +1,77 @@
+primary_name: "Can Berk Saner"
+secondary_name: ""
+navbar_name: "Can Berk Saner"
+nickname: John
+
+positions:
+- name: Electrical Engineer, PhD.
+- name: Research Associate
+  subname: Newcastle University
+
+
+email: "sanerc@u.nus.edu"
+# cv_link: link-to-your-cv-file
+gscholar: NHwO9ycAAAAJ
+linkedin: canberksaner
+orcid: 0000-0002-5149-523X
+wos: https://www.webofscience.com/wos/author/record/AGY-7696-2022
+
+short_bio_text_justify: true
+short_bio: >-
+  <p>
+    I am currently a Research Associate (Postdoc) at Newcastle University, where I work with
+    <a href="https://www.ncl.ac.uk/engineering/staff/profile/matthewdeakin.html" target="_blank">Dr Matthew Deakin</a>,
+    <a href="https://www.ncl.ac.uk/engineering/staff/profile/davidgreenwood.html" target="_blank">Dr David Greenwood</a>,
+    and <a href="https://www.ncl.ac.uk/engineering/staff/profile/harispatsios.html" target="_blank">Prof Haris Patsios</a>.
+  </p>
+  <p>
+    My broad research interests lie in the application of mathematical optimization and machine learning-based methods to power system operation, planning, and coordination in smart grid environments. I am particularly interested in developing EV smart charging frameworks that support reliable EV-grid integration, efficient infrastructure utilization, and fairness in charging services at scale.
+  </p>
+
+portrait_url: /assets/images/photos/portrait.jpg
+#portrait_caption: >-
+# Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+
+education:
+- name: National University of Singapore
+  logo: /assets/images/badges/nus_logo.png
+  position: PhD in Electrical and Computer Engineering
+  date: 2020-2024
+- name: Istanbul Technical University
+  logo: /assets/images/badges/itu_logo.png
+  position: MSc in Electrical Engineering
+  date: 2016-2019
+- name: University of Sussex
+  logo: /assets/images/badges/sussex_logo.png
+  position: MSc in Engineering Business Management
+  date: 2015-2016 
+- name: Istanbul Technical University
+  logo: /assets/images/badges/itu_logo.png
+  position: BSc in Electrical Engineering
+  date: 2010-2015
+
+experience:
+- name: Newcastle University
+  logo: /assets/images/badges/ncl_logo.png
+  position: Postdoctoral Research Associate
+  date: Apr. 2026 - Present
+- name: National University of Singapore
+  logo: /assets/images/badges/nus_logo.png
+  position: Postdoctoral Research Fellow
+  date: Mar. 2024 - Dec. 2025
+- name: National University of Singapore
+  logo: /assets/images/badges/nus_logo.png
+  position: Graduate Assistant
+  date: Jan. 2020 - Jan. 2024
+- name: Istanbul Technical University
+  logo: /assets/images/badges/itu_logo.png
+  position: Research and Teaching Assistant
+  date: May 2017 - Jan. 2020
+
+# awards:
+# - name: Award Name 2
+  # date: 2024
+# - name: Award Name 1 
+  # date: 2021
+# - name: A quick brown fox jumps over the lazy dog and runs away award
+  # date: 2021

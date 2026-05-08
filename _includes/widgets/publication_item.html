@@ -1,0 +1,159 @@
+{% assign item = include.item %}
+{% assign t = item.type | default: "" | downcase | strip %}
+{% assign tags = item.hashtags | default: empty %}
+
+
+{% if t == "journal" %}
+  {% assign type_label = "Journal" %}
+  {% assign type_class = "pub-type-journal" %}
+{% elsif t == "conference" %}
+  {% assign type_label = "Conference" %}
+  {% assign type_class = "pub-type-conference" %}
+{% elsif t == "preprint" %}
+  {% assign type_label = "Preprint" %}
+  {% assign type_class = "pub-type-preprint" %}
+{% else %}
+  {% assign type_label = "" %}
+  {% assign type_class = "pub-type-unknown" %}
+{% endif %}
+
+<!-- ================= Desktop layout ================= -->
+<div class="d-none d-md-block">
+  <div class="row no-gutters {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
+
+    <div class="col-12">
+      <div class="pub-entry {{ type_class }}"
+     data-pub-type="{{ t }}"
+     data-hashtags="{% if tags %}{{ tags | join: ',' | downcase }}{% endif %}">
+
+
+        <div class="pub-bar"></div>
+
+        <div class="pub-content p-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mt-0 mb-1 font-weight-normal mr-2">
+              {% if item.doi %}
+                <a target="_blank" rel="noopener" href="https://doi.org/{{ item.doi | strip }}">{{ item.title }}</a>
+              {% else %}
+                {{ item.title }}
+              {% endif %}
+            </h5>
+
+            {% if type_label != "" %}
+              <span class="pub-type-label">{{ type_label }}</span>
+            {% endif %}
+          </div>
+
+          <p class="mt-0 mb-0 small">
+            {% include widgets/author_list.html authors=item.authors %}
+          </p>
+
+          <p class="mt-0 mb-0 small">
+            {{ item.pub_pre }}
+            <i>{{ item.pub }}</i>
+            {{ item.pub_post }}
+            {{ item.pub_date }}
+            {{ item.pub_last }}
+            <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span>
+          </p>
+
+          <p class="mt-0 mb-0 small text-muted">
+					{% if item.abstract and item.abstract != "" %}
+  <p class="mt-0 mb-1 small text-muted">
+    <span class="tldr-pill">TL;DR</span>
+    {{ item.abstract }}
+  </p>
+
+{% endif %}
+
+          </p>
+
+          <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+            {% for link in item.links %}
+              {% if link[1].url %}
+                <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+              {% else %}
+                <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+              {% endif %}
+            {% endfor %}
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= Mobile layout ================= -->
+<div class="row no-gutters d-md-none
+  {% unless include.hide_bottom_border %}border-bottom{% endunless %}
+  border-gray
+  {% if include.first %}rounded-xl-top{% endif %}
+  {% if include.last %}rounded-xl-bottom{% endif %}">
+
+<div class="col-12">
+  <div class="pub-entry {{ type_class }}
+     {% if include.first %}rounded-xl-top{% endif %}
+     {% if include.last %}rounded-xl-bottom{% endif %}"
+     data-pub-type="{{ t }}"
+     data-hashtags="{% if tags %}{{ tags | join: ',' | downcase }}{% endif %}">
+
+
+      <div class="pub-bar
+        {% if include.first %}rounded-xl-top-left{% endif %}
+        {% if include.last %}rounded-xl-bottom-left{% endif %}"></div>
+
+      <div class="pub-content py-3 px-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="mt-0 mb-1 font-weight-normal mr-2">
+            {% if item.doi %}
+              <a target="_blank" rel="noopener" href="https://doi.org/{{ item.doi | strip }}">{{ item.title }}</a>
+            {% else %}
+              {{ item.title }}
+            {% endif %}
+          </h5>
+
+          {% if type_label != "" %}
+            <span class="pub-type-label">{{ type_label }}</span>
+          {% endif %}
+        </div>
+
+        <p class="mt-0 mb-0 small">
+          {% include widgets/author_list.html authors=item.authors %}
+        </p>
+
+        <p class="mt-0 mb-0 small">
+          {{ item.pub_pre }}
+          <i>{{ item.pub }}</i>
+          {{ item.pub_post }}
+          {{ item.pub_date }}
+          {{ item.pub_last }}
+          <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span>
+        </p>
+
+        <p class="mt-0 mb-0 small text-muted">
+{% if item.abstract and item.abstract != "" %}
+  <p class="mt-0 mb-1 small text-muted">
+    <span class="tldr-pill">TL;DR</span>
+    {{ item.abstract }}
+  </p>
+
+{% endif %}
+
+          </p>
+
+        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+          {% for link in item.links %}
+            {% if link[1].url %}
+              <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+            {% else %}
+              <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+            {% endif %}
+          {% endfor %}
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>

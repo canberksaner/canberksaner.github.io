@@ -1,0 +1,280 @@
+@charset "utf-8";
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    padding-top: 5.0rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 0.8rem!important;
+}
+
+.card-img-overlay {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl-bottom {
+    border-bottom-right-radius: 0.8rem !important;
+    border-bottom-left-radius: 0.8rem !important;
+}
+
+.rounded-xl-top {
+    border-top-left-radius: 0.8rem !important;
+    border-top-right-radius: 0.8rem !important;
+}
+
+
+.text-profile-position {
+    font-weight: 400;
+}
+
+.text-profile-subname {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.text-profile-bio {
+    /* font-family: "Raleway"; */
+    font-weight: 400;
+}
+
+.navbar {
+    opacity: 0.95;
+}
+
+.inline-badge {
+    height: 26px;
+    vertical-align: -10%;
+    margin-right: 2px;
+    line-break: unset;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.cover-image {
+    width: 180px;
+    max-height: 120px;
+}
+
+.abstract-body {
+    min-height: 100px;
+}
+
+img.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+div.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+.badge-publication {
+    font-size: 100%;
+}
+
+.email-text {
+    font-family: Source Code Pro, monospace;
+}
+
+
+
+/* ============================================================
+   Publication entries
+   ============================================================ */
+
+.pub-entry {
+  display: flex;
+  width: 100%;
+}
+
+.pub-bar {
+  width: 8px;
+  flex: 0 0 8px;
+}
+
+.pub-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ============================================================
+   Publication type colors
+   ============================================================ */
+
+.pub-type-journal .pub-bar,
+.pub-type-journal .pub-type-label {
+  background-color: #2f6fed;
+}
+
+.pub-type-conference .pub-bar,
+.pub-type-conference .pub-type-label {
+  background-color: #16a34a;
+}
+
+.pub-type-preprint .pub-bar,
+.pub-type-preprint .pub-type-label {
+  background-color: #6b7280;
+}
+
+.pub-type-unknown .pub-bar,
+.pub-type-unknown .pub-type-label {
+  background-color: #d1d5db;
+  color: #111111;
+}
+
+/* ============================================================
+   Publication badge
+   ============================================================ */
+
+.pub-type-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* ============================================================
+   Publication links
+   ============================================================ */
+
+.abstract-links a {
+  margin-right: 0.4rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Publication filter buttons
+   ============================================================ */
+
+.pub-filter {
+  margin-bottom: 0.75rem;
+}
+
+.pub-filter-btn.active {
+  font-weight: 600;
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.card {
+  border-radius: 0.6rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* ============================================================
+   Profile portrait
+   ============================================================ */
+
+.figure img.rounded-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   Teaching showcase grid
+   ============================================================ */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  display: flex;
+}
+
+.grid-item > .card {
+  width: 100%;
+}
+
+/* ============================================================
+   Typography tweaks
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+}
+
+/* ============================================================
+   Utility
+   ============================================================ */
+
+.no-break {
+  white-space: nowrap;
+}
+
+.inline-badge {
+  height: 1.1em;
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+
+.tldr-pill{
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  margin-right: 0.45rem;
+  border-radius: 999px;
+  background: #a9a9a9;   /* light gray fill */
+  color: #ffffff;        /* white text */
+  font-weight: 700;      /* bold */
+  font-size: 0.72em;     /* slightly smaller than body */
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.square-list {
+  list-style-type: square;
+}
+
+
+.square-list li {
+  margin-left: 0;
+}
