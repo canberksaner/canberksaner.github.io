@@ -19,13 +19,16 @@ wos: https://www.webofscience.com/wos/author/record/AGY-7696-2022
 short_bio_text_justify: true
 short_bio: >-
   <p>
-    I am currently a Research Associate (Postdoc) at Newcastle University, where I work with
+    I am a researcher in power and energy systems. I am currently a Research Associate (Postdoc) at Newcastle University, where I work with
     <a href="https://www.ncl.ac.uk/engineering/staff/profile/matthewdeakin.html" target="_blank">Dr Matt Deakin</a>,
     <a href="https://www.ncl.ac.uk/engineering/staff/profile/davidgreenwood.html" target="_blank">Dr David Greenwood</a>,
     and <a href="https://www.ncl.ac.uk/engineering/staff/profile/harispatsios.html" target="_blank">Prof Haris Patsios</a>.
   </p>
   <p>
     My broad research interests lie in the application of mathematical optimization and machine learning-based methods to power system operation, planning, and coordination in smart grid environments. I am particularly interested in developing EV smart charging frameworks that support reliable EV-grid integration, efficient infrastructure utilization, and fairness in charging services at scale.
+  </p>
+  <p>
+    I am a proud member of the IEEE Power and Energy Society. I served as an Executive Committee member of the <a href="https://site.ieee.org/singapore-pes/" target="_blank">IEEE PES Singapore Chapter</a> from 2023 to 2025.
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
