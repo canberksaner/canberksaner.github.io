@@ -1,6 +1,6 @@
 # canberksaner.github.io
 
-Personal academic website of **Can Berk Saner**, Postdoctoral Research Associate at Newcastle University working on power systems, EV smart charging, and optimization.
+My personal academic website.
 
 Live at: [canberksaner.github.io](https://canberksaner.github.io)
 
