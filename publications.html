@@ -296,8 +296,8 @@ h3.sub{font:500 22px/1.3 var(--serif);margin-top:46px}
 .rg-pa h3{order:1;font:500 18px/1.3 var(--serif);padding:12px 20px 0}
 .rg-pa .rc-no{display:block;width:fit-content;position:relative;isolation:isolate;font:600 10.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:4px 8px 4px 0;margin:-4px 0 2px;transition:color .3s,padding-left .35s cubic-bezier(.2,.8,.2,1)}
 .rg-pa .rc-no::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:6px;background:var(--acc);transform:scaleX(0);transform-origin:left center;opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .2s}
-.rg-pa .rc:hover .rc-no,.rg-pa .rc:focus-within .rc-no{color:#fff;padding-left:8px}
-.rg-pa .rc:hover .rc-no::before,.rg-pa .rc:focus-within .rc-no::before{transform:scaleX(1);opacity:1}
+.rg-pa .rc:is(:hover,.inview) .rc-no,.rg-pa .rc:focus-within .rc-no{color:#fff;padding-left:8px}
+.rg-pa .rc:is(:hover,.inview) .rc-no::before,.rg-pa .rc:focus-within .rc-no::before{transform:scaleX(1);opacity:1}
 .rg-pa .rc-t{order:2;padding:4px 20px 0;font-size:14px;line-height:1.5;color:#3A434E}
 .rg-pa .rc-kp{order:3;padding:10px 20px 10px}
 .rg-pa .rc-kp h4{display:none}
@@ -306,9 +306,9 @@ h3.sub{font:500 22px/1.3 var(--serif);margin-top:46px}
 .rg-pa .rc{transition:border-color .25s,box-shadow .25s,transform .25s}
 .rg-pa figure{transition:background-color .25s}
 .rg-pa h3,.rg-pa .rc-no{transition:color .25s}
-.rg-pa .rc:hover,.rg-pa .rc:focus-within{border-color:var(--acc);box-shadow:0 10px 28px -12px rgba(20,50,79,.35);transform:translateY(-3px)}
-.rg-pa .rc:hover figure,.rg-pa .rc:focus-within figure{background-color:color-mix(in srgb,var(--tint) 70%,var(--acc) 8%)}
-.rg-pa .rc:hover h3,.rg-pa .rc:focus-within h3{color:var(--acc)}
+.rg-pa .rc:is(:hover,.inview),.rg-pa .rc:focus-within{border-color:var(--acc);box-shadow:0 10px 28px -12px rgba(20,50,79,.35);transform:translateY(-3px)}
+.rg-pa .rc:is(:hover,.inview) figure,.rg-pa .rc:focus-within figure{background-color:color-mix(in srgb,var(--tint) 70%,var(--acc) 8%)}
+.rg-pa .rc:is(:hover,.inview) h3,.rg-pa .rc:focus-within h3{color:var(--acc)}
 .rg-pa .rc-kp li{transition:padding-left .2s,background-color .2s}
 .rg-pa .rc-kp li:hover{padding-left:6px;background:linear-gradient(90deg,var(--tint),transparent)}
 .rg-pa .rc-kp li:hover a{color:var(--acc);text-decoration:underline;text-underline-offset:.18em}
@@ -318,45 +318,45 @@ h3.sub{font:500 22px/1.3 var(--serif);margin-top:46px}
 @keyframes rmod{0%{opacity:.15}100%{opacity:1}}
 @keyframes rfit{0%{d:path("M212 80 C212 68 222 58 234 58 C246 58 256 68 256 80 C256 92 246 102 234 102 C222 102 212 92 212 80 Z");fill-opacity:.05}35%{d:path("M202 82 C202 62 218 48 236 48 C256 48 270 62 270 80 C270 98 254 112 234 112 C214 112 202 100 202 82 Z")}70%{d:path("M197 84 C197 60 215 44 238 44 C260 43 276 60 274 80 C272 102 255 115 233 115 C210 116 197 103 197 84 Z")}100%{d:path("M194 84 C194 58 214 42 238 41 C262 40 278 58 276 80 C274 104 256 117 232 117 C208 117 194 104 194 84 Z");fill-opacity:.15}}
 @keyframes rblink{0%,100%{opacity:1}50%{opacity:.35}}
-.rg-pa .rc:hover [data-fig="1G"] .dash{stroke-dasharray:4 1.500;animation:rflow .9s linear infinite}
-.rg-pa .rc:hover [data-fig="1G"] .act{animation:rblink 1.800s ease-in-out infinite}
-.rg-pa .rc:hover [data-fig="2A"] path.acs,.rg-pa .rc:hover [data-fig="2A"] path.ln{--len:260;stroke-dasharray:260;animation:rdraw 1.200s ease-out both}
-.rg-pa .rc:hover [data-fig="2A"] path.ln{animation-delay:.150s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac{animation:rmod .350s ease-out both}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(2){animation-delay:.080s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(3){animation-delay:.160s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(4){animation-delay:.240s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(5){animation-delay:.320s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(6){animation-delay:.400s}
-.rg-pa .rc:hover [data-fig="2A"] rect.ac:nth-of-type(7){animation-delay:.480s}
-.rg-pa .rc:hover [data-fig="3E"] line.acs{stroke-dasharray:6 4;animation:rflow 1s linear infinite}
-.rg-pa .rc:hover [data-fig="3E"] line.lt{stroke:var(--acc)}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1G"] .dash{stroke-dasharray:4 1.500;animation:rflow .9s linear infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1G"] .act{animation:rblink 1.800s ease-in-out infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] path.acs,.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] path.ln{--len:260;stroke-dasharray:260;animation:rdraw 1.200s ease-out both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] path.ln{animation-delay:.150s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac{animation:rmod .350s ease-out both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(2){animation-delay:.080s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(3){animation-delay:.160s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(4){animation-delay:.240s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(5){animation-delay:.320s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(6){animation-delay:.400s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="2A"] rect.ac:nth-of-type(7){animation-delay:.480s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="3E"] line.acs{stroke-dasharray:6 4;animation:rflow 1s linear infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="3E"] line.lt{stroke:var(--acc)}
 @keyframes rfade{from{opacity:0}to{opacity:1}}
 @keyframes rdrawc{0%,68%{stroke-dashoffset:1;fill-opacity:0}100%{stroke-dashoffset:0;fill-opacity:.15}}
-.rg-pa .rc:hover [data-fig="4A"] .fit{stroke-dasharray:1;animation:rdrawc 3s ease-out both}
-.rg-pa .rc:hover [data-fig="4A"] .bp{animation:rpop .18s ease-out both;animation-delay:var(--d)}
-.rg-pa .rc:hover [data-fig="4A"] line.acs{stroke-dasharray:5 3;animation:rflow .8s linear infinite}
-.rg-pa .rc:hover [data-fig="4A"] .nda{animation:rblink 1.600s ease-in-out infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4A"] .fit{stroke-dasharray:1;animation:rdrawc 3s ease-out both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4A"] .bp{animation:rpop .18s ease-out both;animation-delay:var(--d)}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4A"] line.acs{stroke-dasharray:5 3;animation:rflow .8s linear infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4A"] .nda{animation:rblink 1.600s ease-in-out infinite}
 .rfig .reg,.rfig line,.rfig path,.rfig rect{transition:stroke .25s}
 .rfig .ib{transition:height .8s cubic-bezier(.2,.8,.2,1),y .8s cubic-bezier(.2,.8,.2,1)}
 .rfig .vfix{stroke-dasharray:320;stroke-dashoffset:0}
 @keyframes rspin{to{transform:rotate(360deg)}}
-:is(.rg-pa .rc,.opt):hover [data-fig^="5"] .fan{animation:rspin 1.200s linear infinite}
-:is(.rg-pa .rc,.opt):hover [data-fig="5D"] .vfix{animation:rdraw 1.400s ease-out both;--len:320}
-:is(.rg-pa .rc,.opt):hover [data-fig="5C"] .ib1{y:66px;height:44px}
-:is(.rg-pa .rc,.opt):hover [data-fig="5C"] .ib2{y:66px;height:44px}
-:is(.rg-pa .rc,.opt):hover [data-fig="5C"] .ib3{y:66px;height:44px}
-:is(.rg-pa .rc,.opt):hover [data-fig^="5"] .pv{animation:rblink 1.600s ease-in-out infinite}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig^="5"] .fan{animation:rspin 1.200s linear infinite}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5D"] .vfix{animation:rdraw 1.400s ease-out both;--len:320}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5C"] .ib1{y:66px;height:44px}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5C"] .ib2{y:66px;height:44px}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5C"] .ib3{y:66px;height:44px}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig^="5"] .pv{animation:rblink 1.600s ease-in-out infinite}
 @keyframes rmove{0%{transform:translateY(calc(var(--d) * -.5));opacity:0}20%,80%{opacity:1}100%{transform:translateY(calc(var(--d) * .5));opacity:0}}
-:is(.rg-pa .rc,.opt):hover [data-fig="5F"] .mv{animation:rmove 1.100s linear infinite}
-:is(.rg-pa .rc,.opt):hover [data-fig="5F"] .ib{y:66px;height:44px}
-:is(.rg-pa .rc,.opt):hover [data-fig="5F"] .pv{animation:none}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5F"] .mv{animation:rmove 1.100s linear infinite}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5F"] .ib{y:66px;height:44px}
+:is(:is(.rg-pa .rc,.opt):hover,.rg-pa .rc.inview) [data-fig="5F"] .pv{animation:none}
 @keyframes rgrow{from{transform:scaleY(.15)}to{transform:scaleY(1)}}
 @keyframes rspinr{from{transform:rotate(-24deg);opacity:.4}to{transform:rotate(0);opacity:1}}
-.rg-pa .rc:hover [data-fig="1L"] .lay{transform-box:view-box;transform-origin:50% 85.300%;animation:rgrow .7s cubic-bezier(.2,.8,.2,1) both}
-.rg-pa .rc:hover [data-fig="1L"] .lay:nth-of-type(2){animation-delay:.08s}.rg-pa .rc:hover [data-fig="1L"] .lay:nth-of-type(3){animation-delay:.16s}.rg-pa .rc:hover [data-fig="1L"] .lay:nth-of-type(4){animation-delay:.24s}.rg-pa .rc:hover [data-fig="1L"] .lay:nth-of-type(5){animation-delay:.32s}
-.rg-pa .rc:hover [data-fig="1M"] .seg{transform-box:view-box;transform-origin:50% 50%;animation:rspinr .8s cubic-bezier(.2,.8,.2,1) both}
-.rg-pa .rc:hover [data-fig="1N"] .bar,.rg-pa .rc:hover [data-fig="1O"] .wat{transform-box:fill-box;transform-origin:50% 100%;animation:rgrow .6s cubic-bezier(.2,.8,.2,1) both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1L"] .lay{transform-box:view-box;transform-origin:50% 85.300%;animation:rgrow .7s cubic-bezier(.2,.8,.2,1) both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1L"] .lay:nth-of-type(2){animation-delay:.08s}.rg-pa .rc:is(:hover,.inview) [data-fig="1L"] .lay:nth-of-type(3){animation-delay:.16s}.rg-pa .rc:is(:hover,.inview) [data-fig="1L"] .lay:nth-of-type(4){animation-delay:.24s}.rg-pa .rc:is(:hover,.inview) [data-fig="1L"] .lay:nth-of-type(5){animation-delay:.32s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1M"] .seg{transform-box:view-box;transform-origin:50% 50%;animation:rspinr .8s cubic-bezier(.2,.8,.2,1) both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1N"] .bar,.rg-pa .rc:is(:hover,.inview) [data-fig="1O"] .wat{transform-box:fill-box;transform-origin:50% 100%;animation:rgrow .6s cubic-bezier(.2,.8,.2,1) both}
 .rfig .code{font:500 7.600px ui-monospace,'IBM Plex Mono',Consolas,monospace;fill:var(--ink)}
 .rfig .code .cn{fill:var(--mute)}
 .rfig .code .kw{fill:var(--acc);font-weight:700}
@@ -366,28 +366,28 @@ h3.sub{font:500 22px/1.3 var(--serif);margin-top:46px}
 @keyframes rhlR{to{transform:translateY(44px)}}
 @keyframes rhlT{to{transform:translateY(40px)}}
 @keyframes rgrowx{from{transform:scaleX(.08)}to{transform:scaleX(1)}}
-.rg-pa .rc:hover :is([data-fig="1P"],[data-fig="1S"]) .hl{animation:rhlP 2.500s steps(5) infinite}
-.rg-pa .rc:hover [data-fig="1Q"] .hl{animation:rhlQ 2.500s steps(5) infinite}
-.rg-pa .rc:hover [data-fig="1R"] .hl{animation:rhlR 2s steps(4) infinite}
-.rg-pa .rc:hover [data-fig="1T"] .hl{animation:rhlT 2s steps(4) infinite}
-.rg-pa .rc:hover [data-fig^="1"] .tr{stroke-dasharray:4 3;animation:rflow .8s linear infinite}
-.rg-pa .rc:hover [data-fig="1S"] .fb{stroke-dasharray:3 3;animation:rflow .9s linear infinite reverse}
-.rg-pa .rc:hover :is([data-fig="1Q"],[data-fig="1P"]) .pb{transform-box:fill-box;transform-origin:0 50%;animation:rgrowx .8s cubic-bezier(.2,.8,.2,1) both}
-.rg-pa .rc:hover [data-fig="1R"] .led{animation:rblink .6s steps(2) infinite}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="1P"],[data-fig="1S"]) .hl{animation:rhlP 2.500s steps(5) infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1Q"] .hl{animation:rhlQ 2.500s steps(5) infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1R"] .hl{animation:rhlR 2s steps(4) infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1T"] .hl{animation:rhlT 2s steps(4) infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig^="1"] .tr{stroke-dasharray:4 3;animation:rflow .8s linear infinite}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1S"] .fb{stroke-dasharray:3 3;animation:rflow .9s linear infinite reverse}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="1Q"],[data-fig="1P"]) .pb{transform-box:fill-box;transform-origin:0 50%;animation:rgrowx .8s cubic-bezier(.2,.8,.2,1) both}
+.rg-pa .rc:is(:hover,.inview) [data-fig="1R"] .led{animation:rblink .6s steps(2) infinite}
 @keyframes rfitS{0%{transform:scale(.45);fill-opacity:.03}60%{transform:scale(1.05)}100%{transform:scale(1)}}
 @keyframes rpop{from{opacity:0}to{opacity:1}}
 .rfig .fitS,.rfig .sl{transform-box:fill-box;transform-origin:center}
-.rg-pa .rc:hover :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"]) .fitS{animation:rfitS 1.800s cubic-bezier(.3,.7,.3,1) both;animation-delay:.6s}
-.rg-pa .rc:hover [data-fig="4C"] .fitS{animation-delay:0s}
-.rg-pa .rc:hover :is([data-fig="4B"],[data-fig="4D"]) .sc{animation:rpop .2s ease-out both;animation-delay:var(--d)}
-.rg-pa .rc:hover [data-fig="4E"] .sl{animation:rfitS 1.200s cubic-bezier(.3,.7,.3,1) both;animation-delay:var(--d)}
-.rg-pa .rc:hover :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"],[data-fig="4E"]) .nda{animation:rblink 1.600s ease-in-out infinite}
-.rg-pa .rc:hover :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"],[data-fig="4E"]) .flw{stroke-dasharray:5 3;animation:rflow .8s linear infinite}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"]) .fitS{animation:rfitS 1.800s cubic-bezier(.3,.7,.3,1) both;animation-delay:.6s}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4C"] .fitS{animation-delay:0s}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="4B"],[data-fig="4D"]) .sc{animation:rpop .2s ease-out both;animation-delay:var(--d)}
+.rg-pa .rc:is(:hover,.inview) [data-fig="4E"] .sl{animation:rfitS 1.200s cubic-bezier(.3,.7,.3,1) both;animation-delay:var(--d)}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"],[data-fig="4E"]) .nda{animation:rblink 1.600s ease-in-out infinite}
+.rg-pa .rc:is(:hover,.inview) :is([data-fig="4B"],[data-fig="4C"],[data-fig="4D"],[data-fig="4E"]) .flw{stroke-dasharray:5 3;animation:rflow .8s linear infinite}
 .rfig .vwave{transition:d .9s cubic-bezier(.2,.8,.2,1)}
-.rg-pa .rc:hover [data-fig="5A"] .vwave{d:path("M30 39 C60 39 90 39 120 39 S180 39 210 39 S260 39 284 39")}
-.rg-pa .rc:hover [data-fig="5A"] .pv{animation:rblink 1.600s ease-in-out infinite}
-@media (hover:none){.rg-pa .rc:hover{transform:none}}
-@media (prefers-reduced-motion:reduce){.rg-pa .rc,.rg-pa .rc *{animation:none!important;transition:none!important}.rg-pa .rc:hover{transform:none}}
+.rg-pa .rc:is(:hover,.inview) [data-fig="5A"] .vwave{d:path("M30 39 C60 39 90 39 120 39 S180 39 210 39 S260 39 284 39")}
+.rg-pa .rc:is(:hover,.inview) [data-fig="5A"] .pv{animation:rblink 1.600s ease-in-out infinite}
+@media (hover:none){.rg-pa .rc:is(:hover,.inview){transform:none}}
+@media (prefers-reduced-motion:reduce){.rg-pa .rc,.rg-pa .rc *{animation:none!important;transition:none!important}.rg-pa .rc:is(:hover,.inview){transform:none}}
 .rg-ac{display:flex;gap:14px;height:480px}
 .rg-ac .rc{flex:1 1 0;min-width:0;overflow:hidden;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,transform .25s}
 .rg-ac:hover .rc,.rg-ac:focus-within .rc{flex-grow:.72}
@@ -569,14 +569,46 @@ body{background:#F6F8FA}
 #background .tl .lg img{max-width:42px;max-height:42px}
 #background .tl>li:not(:last-child)::after{top:25px;left:calc(50% + 32px);width:calc(100% - 64px)}
 #background .tl .y{margin-top:8px;font-size:12px;padding:1px 8px}
-#background .tl b{font-size:16.500px;margin-top:5px}
+#background .tl b{font-size:15.500px;line-height:1.25;margin-top:6px}
 #background .tl small{font-size:13px;line-height:1.35;margin-top:2px}
-#background .tl small:not(small+small){display:none}
-#background .tl small+small{margin-top:3px}
+#background .tl small{color:var(--mute)}
+#background .tl b+small{margin-top:3px}
 #background{padding-top:26px;padding-bottom:24px}.nD li a{font-weight:500}
 html{scroll-behavior:smooth}#research,#news,#service{scroll-margin-top:88px}
 #service{display:block;margin-top:56px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.mtg{display:none}
+@media (max-width:980px){
+  .top .in{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0;padding:0 16px;min-height:56px}
+  .mtg{display:grid;place-content:center;gap:5px;width:44px;height:44px;margin-right:-10px;background:none;border:0;border-radius:4px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .mtg:focus-visible{outline:2px solid #8FB6DC;outline-offset:-2px}
+  .mtg span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;transition:transform .25s,opacity .2s}
+  .top.open .mtg span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .top.open .mtg span:nth-child(2){opacity:0}
+  .top.open .mtg span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .top nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;overflow:visible;padding:4px 0 10px;border-top:1px solid rgba(255,255,255,.14)}
+  .top.open nav{display:flex}
+  .top nav a{padding:13px 2px;font-size:16px}
+  .top nav a::after{left:2px;right:auto;width:22px;bottom:7px}
+  .top nav a:hover::after{transform:scaleX(0)}
+  .top nav a[aria-current=page]::after{transform:scaleX(1)}
+}
+@media (max-width:900px){
+  .tl>li{cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .tl-pop,.tl>li:first-of-type .tl-pop,.tl>li:last-of-type .tl-pop{display:none}
+  .tl>li.open .tl-pop{display:block}
+  .tl>li:is(:hover,:focus-within) .lg{transform:none}
+  .tl>li:is(:hover,:focus-within) .lg img{filter:none}
+  .tl>li:is(:hover,:focus-within) b{color:inherit}
+  .tl>li:not(:last-child):is(:hover,:focus-within) .y{background:#5C7896}
+  .tl>li.open b{color:var(--acc)}
+  .tl>li.open .y{background:var(--acc)!important}
+  #background .tl>li{grid-template-columns:52px minmax(0,1fr);column-gap:14px}
+  .tl>li:has(.tl-pop) b{position:relative;padding-right:26px}
+  .tl>li:has(.tl-pop) b::after{content:"";position:absolute;right:6px;top:.3em;width:7px;height:7px;border-right:1.5px solid var(--acc);border-bottom:1.5px solid var(--acc);transform:rotate(45deg);transition:transform .2s}
+  .tl>li.open b::after{transform:translateY(4px) rotate(-135deg)}
+  .rg-ac:hover .rc:not(:hover) h3{font-size:inherit}
+}
 .tp>div{padding:11px 0;border-top:1px solid var(--rule)}
 .tp>div:first-child{border-top:0;padding-top:2px}
 .tp dt{font:600 11.5px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
@@ -590,7 +622,8 @@ html{scroll-behavior:smooth}#research,#news,#service{scroll-margin-top:88px}
 <body class="">
 <header class="top"><div class="in">
 <a class="brand" href="index.html">Can Berk (John) Saner</a>
-<nav aria-label="Main"><a href="index.html">Home</a><a href="index.html#research">Research</a><a href="publications.html" aria-current="page">Publications</a><a href="teaching.html">Teaching</a><a href="teaching.html#service">Service</a><a href="index.html#news">News</a></nav>
+<button class="mtg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+<nav id="mnav" aria-label="Main"><a href="index.html">Home</a><a href="index.html#research">Research</a><a href="publications.html" aria-current="page">Publications</a><a href="teaching.html">Teaching</a><a href="teaching.html#service">Service</a><a href="index.html#news">News</a></nav>
 </div></header><div class="shell"><div class="lay"><aside class="side sbE"><div class="ban"></div>
 <img class="pt" src="assets/portrait.jpg" alt="Portrait of Can Berk (John) Saner" width="800" height="800">
 <h1>Can Berk (John) Saner<span class="pd">, PhD</span></h1>
@@ -605,7 +638,7 @@ html{scroll-behavior:smooth}#research,#news,#service{scroll-margin-top:88px}
 </nav>
 </aside><main class="mainc"><div class="ph"><span>Publications</span><h1>Selected publications</h1><p>The full list is on <a href="https://scholar.google.com/citations?user=NHwO9ycAAAAJ">Google Scholar</a>.</p></div>
 <div class="filter" role="group" aria-label="Filter publications"><button data-filter="all" aria-pressed="true">All</button><button data-filter="journal" aria-pressed="false">Journal articles <span>8</span></button><button data-filter="working" aria-pressed="false">Preprints <span>2</span></button><button data-filter="conference" aria-pressed="false">Conference papers <span>16</span></button></div>
-<div class="panel"><div class="pg" data-type="journal"><h3>Journal articles</h3><ol class="pubs"><li><span class="y">2026</span><div><a class="t" href="https://doi.org/10.1109/TSG.2026.3709037">Analytical Representation and Monetization of Distribution System Flexibility for TSO-DSO Coordination via Advanced Sampling Techniques</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE Transactions on Smart Grid</i>, 2026.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1016/j.apenergy.2026.127848">Privacy-Preserving Utilization of Distribution System Flexibility for Enhanced TSO-DSO Interoperability: A Novel Machine Learning-Based Optimal Power Flow Approach</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>Applied Energy</i>, 2026.</p></li><li><span class="y">2025</span><div><a class="t" href="https://doi.org/10.1016/j.segan.2025.101672">Machine Learning-Driven Multi-Agent-Based AC Optimal Power Flow With Effective Dataset Creation for Data Privacy and Interoperability</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>Sustainable Energy, Grids and Networks</i>, 2025.</p></li><li><span class="y">2024</span><div><a class="t" href="https://doi.org/10.1109/TITS.2024.3451498">A Social Welfare Theory-Inspired Lexicographic Optimal Charging Scheduling Framework for Modular EV Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, vol. 25, no. 11, pp. 18648-18660, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/TITS.2024.3440355">A Multi-Module Modeling and Optimization Framework for Integrated Planning and Operation of Electric Bus Shuttle Fleets</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, vol. 25, no. 11, pp. 16910-16924, 2024.</p></li><li><span class="y">2023</span><div><a class="t" href="https://doi.org/10.1109/TITS.2023.3303621">A Charge Curve and Battery Management System Aware Optimal Charging Scheduling Framework for Electric Vehicle Fast Charging Stations With Heterogeneous Customer Mix</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, 2023.</p></li><li><span class="y">2022</span><div><a class="t" href="https://doi.org/10.1109/TSG.2022.3140927">A Cooperative Hierarchical Multi-Agent System for EV Charging Scheduling in Presence of Multiple Charging Stations</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Smart Grid</i>, vol. 13, no. 3, pp. 2218-2233, 2022.</p></li><li><span class="y">2021</span><div><a class="t" href="https://doi.org/10.1007/s00202-021-01281-x">An Ensemble Model for Wide-Area Measurement-Based Transient Stability Assessment in Power Systems</a><p class="a"><b>C. B. Saner</b>, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>Electrical Engineering</i>, vol. 103, no. 6, pp. 2855-2869, 2021.</p></li></ol></div><div class="pg" data-type="working"><h3>Preprints</h3><ol class="pubs"><li><span class="y">2026</span><div><a class="t" href="https://doi.org/10.48550/arXiv.2611.10902">Bisect-Index-Choose: A Fast and Exact Algorithm for EV Charging under Minimum Charging Rates</a><p class="a"><b>C. B. Saner</b></p></div><p class="v"><i>arXiv:2611.10902</i>, 2026. <a href="https://github.com/canberksaner/bic-public">Code</a></p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.48550/arXiv.2605.15750">Fairness-Guaranteed Online Power Allocation Policies for EV Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, Y.-S. Soh, A. Varvitsiotis</p></div><p class="v"><i>arXiv:2605.15750</i>, 2026. <a href="https://github.com/canberksaner/fair-opap-public">Code</a></p></li></ol></div><div class="pg" data-type="conference"><h3>Conference papers</h3><ol class="pubs"><li><span class="y">2025</span><div><a class="t" href="https://doi.org/10.1109/GTDAsia60461.2025.11313038">Optimal Online EV Charging with Discrete Rates and Phase Unbalance Constraints</a><p class="a"><b>C. B. Saner</b></p></div><p class="v"><i>IEEE PES GTD Grand International Conference and Exposition Asia (GTD Asia)</i>, 2025.</p></li><li><span class="y">2024</span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863354">A Bilevel Programming Approach to Model the Charge Curve for EV Charging Scheduling at Capacity-Constrained Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863010">A Machine Learning-Based Privacy-Preserving Approach to Incorporate Distributed Generators in AC Optimal Power Flow</a><p class="a">B. Dindar, <b>C. B. Saner</b>, D. Y. Polat, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863046">Physics-Informed Neural Networks for Privacy-Preserving Model Sharing in Power Systems</a><p class="a">I. Canyakmaz, <b>C. B. Saner</b>, A. Varvitsiotis</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y">2023</span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10561904">Heuristic Methods for EV Charging Scheduling in Fast Charging Stations with Modular Architecture: A Comparative Analysis</a><p class="a"><b>C. B. Saner</b>, J. Saha, A. Sharma, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10562033">Incorporating Battery Degradation Costs into EV Charging Scheduling: A Neural Network and MILP-based Approach</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, A. Sharma, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023. <span class="aw">Best Paper Award.</span></p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10562006">TSO-DSO Interaction: Privacy-Preserving Optimal Power Flow with Distributed Generators Using a Machine Learning-Based Approach</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023. <span class="aw">Best Paper Award.</span></p></li><li><span class="y">2022</span><div><a class="t" href="https://doi.org/10.1109/APPEEC53445.2022.10072240">A MILP-based Approach to Account for Battery Degradation in Electric Bus Charging Scheduling</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2022.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTAsia54193.2022.10003640">An EV Charging Scheduling Methodology to Reduce Demand and Energy Charges in Industrial and Commercial Sites</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies - Asia (ISGT Asia)</i>, 2022.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTAsia54193.2022.10003555">A Vehicle and Charging Scheduling Framework for Campus Shuttle Electric Buses</a><p class="a"><b>C. B. Saner</b>, R. H. C. Wei, S. A. R. Alkaff, L. W. Zheng, L. Y. Wei, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies - Asia (ISGT Asia)</i>, 2022.</p></li><li><span class="y">2019</span><div><a class="t" href="https://doi.org/10.23919/ELECO47770.2019.8990370">Cost Sensitive Class-Weighting Approach for Transient Instability Prediction Using Convolutional Neural Networks</a><p class="a">M. Kesici, <b>C. B. Saner</b>, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Conference on Electrical and Electronics Engineering (ELECO)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.23919/ELECO47770.2019.8990567">Improving the Performance of Transient Stability Prediction Using Resampling Methods</a><p class="a"><b>C. B. Saner</b>, M. Kesici, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Conference on Electrical and Electronics Engineering (ELECO)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782314">An Optimal PMU Placement Scheme for Early Prediction of Transient Instabilities in Power Systems</a><p class="a">M. Kesici, <b>C. B. Saner</b>, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782365">Wide Area Measurement Based Online Monitoring and Event Detection Using Convolutional Neural Networks</a><p class="a">M. Kesici, <b>C. B. Saner</b>, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782391">Wide Area Measurement-Based Transient Stability Prediction Using Long Short-Term Memory Networks</a><p class="a"><b>C. B. Saner</b>, M. Kesici, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y">2018</span><div><a class="t" href="https://doi.org/10.1109/UPEC.2018.8541935">Fuel Savings in Remote Antarctic Microgrids Through Energy Management</a><p class="a"><b>C. B. Saner</b>, S. Skarvelis-Kazakos</p></div><p class="v"><i>International Universities Power Engineering Conference (UPEC)</i>, 2018.</p></li></ol></div></div></main></div></div><footer class="ft2"><div class="in"><span>Last updated November 2026</span></div></footer><script>
+<div class="panel"><div class="pg" data-type="journal"><h3>Journal articles</h3><ol class="pubs"><li><span class="y">2026</span><div><a class="t" href="https://doi.org/10.1109/TSG.2026.3709037">Analytical Representation and Monetization of Distribution System Flexibility for TSO-DSO Coordination via Advanced Sampling Techniques</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE Transactions on Smart Grid</i>, 2026.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1016/j.apenergy.2026.127848">Privacy-Preserving Utilization of Distribution System Flexibility for Enhanced TSO-DSO Interoperability: A Novel Machine Learning-Based Optimal Power Flow Approach</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>Applied Energy</i>, 2026.</p></li><li><span class="y">2025</span><div><a class="t" href="https://doi.org/10.1016/j.segan.2025.101672">Machine Learning-Driven Multi-Agent-Based AC Optimal Power Flow With Effective Dataset Creation for Data Privacy and Interoperability</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>Sustainable Energy, Grids and Networks</i>, 2025.</p></li><li><span class="y">2024</span><div><a class="t" href="https://doi.org/10.1109/TITS.2024.3451498">A Social Welfare Theory-Inspired Lexicographic Optimal Charging Scheduling Framework for Modular EV Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, vol. 25, no. 11, pp. 18648-18660, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/TITS.2024.3440355">A Multi-Module Modeling and Optimization Framework for Integrated Planning and Operation of Electric Bus Shuttle Fleets</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, vol. 25, no. 11, pp. 16910-16924, 2024.</p></li><li><span class="y">2023</span><div><a class="t" href="https://doi.org/10.1109/TITS.2023.3303621">A Charge Curve and Battery Management System Aware Optimal Charging Scheduling Framework for Electric Vehicle Fast Charging Stations With Heterogeneous Customer Mix</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Intelligent Transportation Systems</i>, 2023.</p></li><li><span class="y">2022</span><div><a class="t" href="https://doi.org/10.1109/TSG.2022.3140927">A Cooperative Hierarchical Multi-Agent System for EV Charging Scheduling in Presence of Multiple Charging Stations</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE Transactions on Smart Grid</i>, vol. 13, no. 3, pp. 2218-2233, 2022.</p></li><li><span class="y">2021</span><div><a class="t" href="https://doi.org/10.1007/s00202-021-01281-x">An Ensemble Model for Wide-Area Measurement-Based Transient Stability Assessment in Power Systems</a><p class="a"><b>C. B. Saner</b>, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>Electrical Engineering</i>, vol. 103, no. 6, pp. 2855-2869, 2021.</p></li></ol></div><div class="pg" data-type="working"><h3>Preprints</h3><ol class="pubs"><li><span class="y">2026</span><div><a class="t" href="https://doi.org/10.48550/arXiv.2611.10902">Bisect-Index-Choose: A Fast and Exact Algorithm for EV Charging under Minimum Charging Rates</a><p class="a"><b>C. B. Saner</b></p></div><p class="v"><i>arXiv:2611.10902</i>, 2026. <a href="https://github.com/canberksaner/bic-public">Code</a></p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.48550/arXiv.2605.15750">Fairness-Guaranteed Online Power Allocation Policies for EV Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, Y.-S. Soh, A. Varvitsiotis</p></div><p class="v"><i>arXiv:2605.15750</i>, 2026. <a href="https://github.com/canberksaner/fair-opap-public">Code</a></p></li></ol></div><div class="pg" data-type="conference"><h3>Conference papers</h3><ol class="pubs"><li><span class="y">2025</span><div><a class="t" href="https://doi.org/10.1109/GTDAsia60461.2025.11313038">Optimal Online EV Charging with Discrete Rates and Phase Unbalance Constraints</a><p class="a"><b>C. B. Saner</b></p></div><p class="v"><i>IEEE PES GTD Grand International Conference and Exposition Asia (GTD Asia)</i>, 2025.</p></li><li><span class="y">2024</span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863354">A Bilevel Programming Approach to Model the Charge Curve for EV Charging Scheduling at Capacity-Constrained Fast Charging Stations</a><p class="a"><b>C. B. Saner</b>, J. Saha, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863010">A Machine Learning-Based Privacy-Preserving Approach to Incorporate Distributed Generators in AC Optimal Power Flow</a><p class="a">B. Dindar, <b>C. B. Saner</b>, D. Y. Polat, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTEUROPE62998.2024.10863046">Physics-Informed Neural Networks for Privacy-Preserving Model Sharing in Power Systems</a><p class="a">I. Canyakmaz, <b>C. B. Saner</b>, A. Varvitsiotis</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies Europe (ISGT Europe)</i>, 2024.</p></li><li><span class="y">2023</span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10561904">Heuristic Methods for EV Charging Scheduling in Fast Charging Stations with Modular Architecture: A Comparative Analysis</a><p class="a"><b>C. B. Saner</b>, J. Saha, A. Sharma, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10562033">Incorporating Battery Degradation Costs into EV Charging Scheduling: A Neural Network and MILP-based Approach</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, A. Sharma, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023. <span class="aw">Best Paper Award.</span></p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/APPEEC57400.2023.10562006">TSO-DSO Interaction: Privacy-Preserving Optimal Power Flow with Distributed Generators Using a Machine Learning-Based Approach</a><p class="a">B. Dindar, <b>C. B. Saner</b>, H. K. Çakmak, V. Hagenmeyer</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2023. <span class="aw">Best Paper Award.</span></p></li><li><span class="y">2022</span><div><a class="t" href="https://doi.org/10.1109/APPEEC53445.2022.10072240">A MILP-based Approach to Account for Battery Degradation in Electric Bus Charging Scheduling</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Asia-Pacific Power and Energy Engineering Conference (APPEEC)</i>, 2022.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTAsia54193.2022.10003640">An EV Charging Scheduling Methodology to Reduce Demand and Energy Charges in Industrial and Commercial Sites</a><p class="a"><b>C. B. Saner</b>, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies - Asia (ISGT Asia)</i>, 2022.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/ISGTAsia54193.2022.10003555">A Vehicle and Charging Scheduling Framework for Campus Shuttle Electric Buses</a><p class="a"><b>C. B. Saner</b>, R. H. C. Wei, S. A. R. Alkaff, L. W. Zheng, L. Y. Wei, A. Trivedi, D. Srinivasan</p></div><p class="v"><i>IEEE PES Innovative Smart Grid Technologies - Asia (ISGT Asia)</i>, 2022.</p></li><li><span class="y">2019</span><div><a class="t" href="https://doi.org/10.23919/ELECO47770.2019.8990370">Cost Sensitive Class-Weighting Approach for Transient Instability Prediction Using Convolutional Neural Networks</a><p class="a">M. Kesici, <b>C. B. Saner</b>, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Conference on Electrical and Electronics Engineering (ELECO)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.23919/ELECO47770.2019.8990567">Improving the Performance of Transient Stability Prediction Using Resampling Methods</a><p class="a"><b>C. B. Saner</b>, M. Kesici, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Conference on Electrical and Electronics Engineering (ELECO)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782314">An Optimal PMU Placement Scheme for Early Prediction of Transient Instabilities in Power Systems</a><p class="a">M. Kesici, <b>C. B. Saner</b>, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782365">Wide Area Measurement Based Online Monitoring and Event Detection Using Convolutional Neural Networks</a><p class="a">M. Kesici, <b>C. B. Saner</b>, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y"></span><div><a class="t" href="https://doi.org/10.1109/SGCF.2019.8782391">Wide Area Measurement-Based Transient Stability Prediction Using Long Short-Term Memory Networks</a><p class="a"><b>C. B. Saner</b>, M. Kesici, M. Mahdi, Y. Yaslan, V. M. I. Genc</p></div><p class="v"><i>International Istanbul Smart Grids and Cities Congress and Fair (ICSG)</i>, 2019.</p></li><li><span class="y">2018</span><div><a class="t" href="https://doi.org/10.1109/UPEC.2018.8541935">Fuel Savings in Remote Antarctic Microgrids Through Energy Management</a><p class="a"><b>C. B. Saner</b>, S. Skarvelis-Kazakos</p></div><p class="v"><i>International Universities Power Engineering Conference (UPEC)</i>, 2018.</p></li></ol></div></div></main></div></div><footer class="ft2"><div class="in"><span>Last updated November 2026</span></div></footer><script>(function(){var t=document.querySelector('.top'),b=t&&t.querySelector('.mtg');if(!b)return;function set(o){t.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')}b.addEventListener('click',function(){set(!t.classList.contains('open'))});t.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&t.classList.contains('open')){set(false);b.focus()}})})();</script><script>
 (function(){var bs=document.querySelectorAll('[data-filter]');bs.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-filter');bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});document.querySelectorAll('[data-type]').forEach(function(e){e.hidden=!(f==='all'||e.getAttribute('data-type')===f)})})})})();
 </script>
 </body>
