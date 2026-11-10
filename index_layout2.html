@@ -1,26 +1,3 @@
----
-layout: default
-title : Homepage
-navbar_title: Home (Layout 2)
----
-{% include widgets/profile_card.html %}
-
-{% if site.data.display.homepage.show_experience %}
-    {% include widgets/experience_card.html %}
-{% endif %}
-
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-    {% endif %}
-{% endif %}
-
-{% if site.data.display.homepage.show_selected_publications %}
-    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-    %}
-{% endif %}
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>Home | Can Berk (John) Saner</title>
+<link rel="canonical" href="https://canberksaner.com/"><meta http-equiv="refresh" content="0; url=/"><meta name="robots" content="noindex">
+<script>location.replace('/')</script></head><body><p><a href="/">Home has moved here.</a></p></body></html>
